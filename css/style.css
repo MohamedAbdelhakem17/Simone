@@ -1,0 +1,1269 @@
+/* Start Global Rules */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.special-title {
+  text-transform: capitalize;
+  font-size: 8rem;
+  font-weight: 900;
+  color: #dee3e4;
+}
+
+.special-title+h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  -webkit-transform: translate(50%, -50%);
+  -moz-transform: translate(50%, -50%);
+  -ms-transform: translate(50%, -50%);
+  -o-transform: translate(50%, -50%);
+}
+
+.special-title::after {
+  content: "";
+  height: 3px;
+  width: 10rem;
+  background-color: rgb(32, 201, 151);
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@media screen and (max-width: 767px) {
+  .special-title {
+    font-size: 5rem;
+  }
+
+  .special-title::after {
+    width: 6rem;
+  }
+
+  .special-title+h3 {
+    font-size: 1.7rem;
+    width: 100%;
+  }
+}
+
+/* End Global Rules */
+
+/* ==================== Start Navbar ==================== */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 1rem 1.3rem;
+  z-index: 999999999999;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .container .logo {
+  flex-basis: 25%;
+}
+
+.navbar .container .logo a {
+  font-weight: 600;
+  font-size: 2rem;
+  color: white;
+}
+
+.navbar .container .link {
+  flex-basis: 50%;
+}
+
+.navbar .container .link ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar .container .link ul li a {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 300;
+  transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+}
+
+.navbar .container .link ul li a.active,
+.navbar .container .link ul li a:hover {
+  color: #20c997;
+}
+
+.toggle-menu {
+  color: white;
+  font-size: 1.5rem;
+  display: none;
+}
+
+/* ==================== Start Media Navbar ==================== */
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .navbar .container {
+    justify-content: space-between;
+  }
+
+  .navbar .container .logo {
+    flex-basis: 50%;
+  }
+
+  .navbar .container .link {
+    flex-basis: 50%;
+    text-align: right;
+  }
+
+  .navbar .container .link ul {
+    display: none;
+  }
+
+  .toggle-menu {
+    display: block;
+  }
+
+  .navbar .container .link .toggle-menu:hover+ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.39);
+  }
+
+  .navbar .container .link ul li {
+    padding: 0.5rem 0;
+  }
+}
+
+/* ==================== End MediaNavbar ==================== */
+/* ==================== End Navbar ==================== */
+
+/* ==================== Start Home ==================== */
+#home {
+  height: 100vh;
+  background-image: url(../imges/intro-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0px 0px 0px 1000px #111418bd inset;
+}
+
+#home .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#home .container .home-content {
+  flex-basis: 60%;
+  color: white;
+  text-align: center;
+}
+
+#home .container .home-content h3 {
+  font-size: 2.5rem;
+  padding: .5rem;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+}
+
+.static-text,
+.dynamic-text {
+  font-size: 60px;
+  font-weight: 500;
+  height: 100px;
+  line-height: 1.8;
+}
+
+.static-text h2 {
+  font-size: 5rem;
+  color: white;
+  height: 100%;
+}
+
+.dynamic-text {
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.dynamic-text h3 {
+  position: relative;
+  top: 0px;
+  color: white;
+  height: 100%;
+  animation: slide 25s steps(5) infinite;
+  -webkit-animation: slide 25s steps(5) infinite;
+}
+
+.dynamic-text h3 span {
+  border-right: 10px solid rgb(255, 255, 255);
+  width: 0px;
+  display: inline-flex;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 110%;
+  font-size: 4.5rem;
+  animation: typeing 5s steps(13) infinite;
+  -webkit-animation: typeing 5s steps(13) infinite;
+}
+
+@keyframes slide {
+  to {
+    top: -500px;
+  }
+}
+
+@keyframes typeing {
+  to {
+    width: 520px;
+  }
+}
+
+#home .container .home-content p {
+  padding: 0.5rem;
+  margin-bottom: 2.5rem;
+  color: #dee3e4;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+#home .container .home-content a {
+  color: #20c997;
+  border: 2px solid #20c997;
+  border-radius: 10px;
+  padding: 1rem 3.5rem;
+  transition: all 0.6s linear;
+  -webkit-transition: all 0.6s linear;
+  -moz-transition: all 0.6s linear;
+  -ms-transition: all 0.6s linear;
+  -o-transition: all 0.6s linear;
+}
+
+#home .container .home-content a:hover {
+  background-color: #20c997;
+  color: white;
+}
+
+#home .container .go-down {
+  flex-basis: 5%;
+  position: relative;
+}
+
+#home .container .go-down i {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 1.3rem;
+  animation: go-down 1s infinite;
+  -webkit-animation: go-down 1s infinite;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #home {
+    background-position: right center;
+  }
+
+  .home-content .info {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0%;
+
+  }
+
+  .static-text,
+  .dynamic-text {
+    line-height: 1.2;
+    height: 50px;
+  }
+
+  .static-text h2 {
+    font-size: 3rem;
+    height: 100%;
+  }
+
+  .dynamic-text h3 {
+    animation-name: slide;
+  }
+
+  .dynamic-text h3 span {
+    font-size: 2.5rem;
+    height: 100%;
+
+
+  }
+
+  @keyframes typeing {
+    to {
+      width: 260px;
+    }
+  }
+
+  @keyframes slide {
+    to {
+      top: -250px;
+    }
+  }
+
+  #home .container .home-content p {
+    padding: 1.5rem;
+  }
+}
+
+
+
+@keyframes go-down {
+  to {
+    bottom: 0;
+  }
+}
+
+/* ==================== End Home ==================== */
+/* ==================== Start About  ==================== */
+#about {
+  padding: 2rem 1rem;
+}
+
+#about .container .title {
+  text-align: center;
+  position: relative;
+}
+
+#about .container .info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+#about .container .info .definition {
+  flex-basis: 65%;
+}
+
+#about .container .info .definition h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+#about .container .info .definition h3 span {
+  color: #20c997;
+}
+
+#about .container .info .definition p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0.8rem 0;
+}
+
+#about .container .info .definition a {
+  display: inline-block;
+  padding: 0.8rem 3.5rem;
+  margin-top: 0.5rem;
+  background-color: #20c997;
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#about .container .info .Personal-info {
+  flex-basis: 30%;
+}
+
+#about .container .info .Personal-info li {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+#about .container .info .Personal-info li span {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+#about .container .info .Personal-info li a {
+  color: #20c997;
+}
+
+#about .container .download {
+  display: inline-block;
+  padding: 0.8rem 3.5rem;
+  margin-top: 0.5rem;
+  background-color: #20c997;
+  color: white;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: background-color 0.7s ease-in;
+  -webkit-transition: background-color 0.7s ease-in;
+  -moz-transition: background-color 0.7s ease-in;
+  -ms-transition: background-color 0.7s ease-in;
+  -o-transition: background-color 0.7s ease-in;
+}
+
+#about .container .download:hover {
+  background-color: #1baa80;
+}
+
+#about .container .counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 1rem 0rem;
+}
+
+#about .container .counter .item {
+  flex-basis: 25%;
+  padding: 1.5rem 0rem;
+  border-right: 3px solid #eaeaea;
+}
+
+#about .container .counter :last-child {
+  border: none;
+}
+
+#about .container .counter .item h5 {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #6c757d;
+}
+
+#about .container .counter .item p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* ==================== Start Media About ==================== */
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #about .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #about .container .info {
+    flex-direction: column;
+  }
+
+  #about .container .info .definition {
+    text-align: center;
+  }
+
+  #about .container .download {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #about .container .counter {
+    flex-wrap: wrap;
+    border: none;
+    text-align: center;
+  }
+
+  #about .container .counter .item {
+    border: none;
+
+    flex-basis: 50%;
+  }
+
+  #about .container .counter .top {
+    border-bottom: 1px solid #6c757db2;
+    border-right: 1px solid #6c757db2;
+  }
+
+  #about .container .counter .bottom {
+    border-top: 1px solid #6c757db2;
+    border-left: 1px solid #6c757db2;
+  }
+}
+
+/* ==================== End Media About ==================== */
+/* ==================== End About  ==================== */
+/* ==================== Start Services  ==================== */
+#services {
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+}
+
+#services .container {
+  display: flex;
+  flex-direction: column;
+}
+
+#services .container .title {
+  text-align: center;
+  position: relative;
+}
+
+#services .container .work {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2.5rem;
+}
+
+#services .container .work .item {
+  display: flex;
+  align-items: flex-start;
+  flex-basis: calc((100% / 2) - 2rem);
+  margin-bottom: 0.9rem;
+}
+
+#services .container .work .icon {
+  background-color: white;
+  padding: 1rem;
+}
+
+#services .container .work .icon i {
+  font-size: 2rem;
+  color: #20c997;
+}
+
+#services .container .work .info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: flex-start;
+
+}
+
+#services .container .work .info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+}
+
+#services .container .work .info p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #services {
+    padding: 1rem 0.5rem;
+  }
+
+  #services .container {
+    padding: 0;
+  }
+
+  #services .container .work {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  #services .container .work .icon {
+    margin: 0 auto;
+  }
+
+  #services .container .work .item {
+    padding: 0.5rem;
+    flex-basis: 100%;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  #services .container .work .info {
+    align-items: center;
+  }
+
+}
+
+/* ====================  End Services  ==================== */
+
+/* ====================  End Resume  ==================== */
+#resume {
+  padding: 2rem 1rem;
+}
+
+#resume .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#resume .container .title {
+  text-align: center;
+  position: relative;
+}
+
+#resume .container .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#resume .container .info .education {
+  flex-basis: calc((100% / 2) - 1.2rem);
+}
+
+#resume .container .info .experience {
+  flex-basis: calc((100% / 2) - 1.2rem);
+}
+
+#resume .container .info .education h2,
+#resume .container .info .experience h2 {
+  padding: 1rem 0rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+#resume .container .item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#resume .container .item span {
+  padding: 0.5rem 1rem;
+  color: white;
+  background: #20c997;
+  border-radius: 10px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume .container .item h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1rem 0rem;
+}
+
+#resume .container .item h5 {
+  color: #dc3545;
+  font-size: 1.2rem;
+  padding: 0rem 0rem 0.5rem;
+}
+
+#resume .container .item p {
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+#resume .container .skills {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#resume .container .skills .progress {
+  flex-basis: calc((100% / 2) - 1.2rem);
+  padding: 1rem;
+}
+
+#resume .container .skills .progress .title {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+#resume .container .skills .progress .bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e9ecef;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#resume .container .skills .progress .bar span {
+  display: inline-block;
+  width: 65%;
+  height: 100%;
+  background-color: #20c997;
+}
+
+#resume .container .download {
+  display: inline-block;
+  padding: 0.8rem 3.5rem;
+  margin-top: 1rem;
+  color: #6c757d;
+  border: 2px solid #6c757d;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: color 0.7s ease-in;
+  -webkit-transition: color 0.7s ease-in;
+  -moz-transition: color 0.7s ease-in;
+  -ms-transition: color 0.7s ease-in;
+  -o-transition: color 0.7s ease-in;
+}
+
+#resume .container .download:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #resume {
+    padding: 1rem 0.5rem;
+  }
+
+  #resume .container .info {
+    flex-direction: column;
+  }
+
+  #resume .container .skills {
+    flex-direction: column;
+  }
+}
+
+/* ====================  End Resume  ==================== */
+
+/* ====================  Start Portfolio  ==================== */
+#Portfolio {
+  padding: 2rem 1rem;
+}
+
+#Portfolio .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#Portfolio .container .title {
+  text-align: center;
+  position: relative;
+}
+
+#Portfolio .container .gallery {
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#Portfolio .container .gallery ul li {
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+#Portfolio .container .gallery ul li:first-child {
+  border-bottom: 2px solid #20c997;
+}
+
+#Portfolio .container .gallery ul li a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111418bd;
+  transition: color 0.5s linear;
+  -webkit-transition: color 0.5s linear;
+  -moz-transition: color 0.5s linear;
+  -ms-transition: color 0.5s linear;
+  -o-transition: color 0.5s linear;
+}
+
+#Portfolio .container .gallery ul li a:hover,
+#Portfolio .container .gallery ul li a.active {
+  color: #20c997;
+}
+
+#Portfolio .container .gallery .imgs {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+#Portfolio .container .gallery .imgs .column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#Portfolio .container .gallery .imgs .pic {
+  flex-basis: calc((100% / 3) - 1rem);
+  overflow: hidden;
+  position: relative;
+}
+
+#Portfolio .container .gallery img {
+  width: 100%;
+  transition: transform 0.6s linear;
+  -webkit-transition: transform 0.6s linear;
+  -moz-transition: transform 0.6s linear;
+  -ms-transition: transform 0.6s linear;
+  -o-transition: transform 0.6s linear;
+}
+
+#Portfolio .container .gallery .pic:hover img {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+}
+
+#Portfolio .container .gallery .info {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.6s linear;
+  -webkit-transition: opacity 0.6s linear;
+  -moz-transition: opacity 0.6s linear;
+  -ms-transition: opacity 0.6s linear;
+  -o-transition: opacity 0.6s linear;
+}
+
+#Portfolio .container .gallery .info:hover {
+  opacity: 1;
+}
+
+#Portfolio .container .gallery .pic a {
+  color: white;
+}
+
+#Portfolio .container .gallery a h4 {
+  padding: 0.3rem;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #Portfolio .container .gallery .imgs {
+    flex-wrap: wrap;
+  }
+
+  #Portfolio .container .gallery .imgs .column {
+    flex-basis: calc(50% - 2rem);
+  }
+
+  #Portfolio .container .gallery .imgs .column:last-child {
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+  }
+
+  #Portfolio .container .gallery .imgs .column:last-child .pic {
+    flex-basis: calc(50% - 2rem);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #Portfolio .container .gallery {
+    padding: 0%;
+  }
+
+  #Portfolio .container .gallery .imgs {
+    flex-direction: column;
+  }
+
+  #Portfolio .container .gallery .imgs .column:last-child {
+    flex-direction: column;
+  }
+}
+
+/* ====================  End Portfolio  ==================== */
+
+/* ====================  Start Client  ==================== */
+#client {
+  padding: 2rem 1rem;
+}
+
+#client .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#client .container .title {
+  text-align: center;
+  position: relative;
+}
+
+#client .container .comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 2rem 1rem;
+}
+
+#client .container .comment .feedback {
+  flex-basis: calc(50% - 1rem);
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+#client .container .comment .feedback .info {
+  display: flex;
+  align-items: center;
+}
+
+#client .container .comment .feedback .info img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+#client .container .comment .feedback .info div {
+  padding: 0.9rem;
+}
+
+#client .container .comment .feedback .info div h2 {
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#client .container .comment .feedback .info div p {
+  font-weight: 700;
+  color: #848c93;
+}
+
+#client .container .comment .feedback .info+p {
+  padding: 1rem;
+  line-height: 1.8;
+  font-weight: 600;
+}
+
+#client .container .comment .feedback .icon {
+  padding: 1rem;
+}
+
+#client .container .comment .feedback i {
+  color: gold;
+}
+
+#client .container .circle {
+  width: 10px;
+  height: 10px;
+  background-color: #20c997;
+  border-radius: 50%;
+  position: relative;
+}
+
+#client .container .circle::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #20c997;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #client .container .comment {
+    flex-direction: column;
+  }
+
+  #client .container .comment .feedback {
+    margin-bottom: 1rem;
+  }
+}
+
+/* ====================  End Client  ==================== */
+
+/* ====================  Start contact  ==================== */
+#contact {
+  padding: 2rem 1rem;
+  background-color: #f8f9fa;
+}
+
+#contact .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#contact .container .title {
+  text-align: center;
+  position: relative;
+}
+
+#contact .container .content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#contact .container .content .addres {
+  flex-basis: 25%;
+  padding: 0rem 2rem;
+}
+
+#contact .container .content .addres h2 {
+  padding: 1rem 0rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+#contact .container .content .addres ul {
+  margin-bottom: 1rem;
+}
+
+#contact .container .content .addres ul li {
+  padding: 0.5rem 0rem;
+}
+
+#contact .container .content .addres ul li i {
+  color: #20c997;
+  margin-right: 0.8rem;
+}
+
+#contact .container .content .form {
+  flex-basis: 70%;
+  text-align: center;
+}
+
+#contact .container .content .form h2 {
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+#contact input[name="name"],
+#contact input[name="email"] {
+  width: calc(50% - 2rem);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+
+#contact form textarea {
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  margin: 20px 0px;
+}
+
+#contact input[type="submit"] {
+  padding: 1rem 2.5rem;
+  margin: 1rem 0;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #20c997;
+  transition: background-color 1s;
+  -webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -ms-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+#contact input[type="submit"]:hover {
+  background-color: #1baa80;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #contact input[name="name"],
+  #contact input[name="email"],
+  #contact form textarea {
+    width: 100%;
+  }
+}
+
+/* ====================  End contact  ==================== */
+
+/* ====================  End Footer  ==================== */
+footer {
+  padding: 3rem;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+footer .container h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+footer .container h3 a {
+  color: #20c997;
+  transition: color 0.6s linear;
+  -webkit-transition: color 0.6s linear;
+  -moz-transition: color 0.6s linear;
+  -ms-transition: color 0.6s linear;
+  -o-transition: color 0.6s linear;
+}
+
+footer .container h3 a:hover {
+  color: #1baa80;
+}
+
+footer .container .link a {
+  font-size: 1.2rem;
+  color: black;
+  transition: color 0.6s linear;
+  -webkit-transition: color 0.6s linear;
+  -moz-transition: color 0.6s linear;
+  -ms-transition: color 0.6s linear;
+  -o-transition: color 0.6s linear;
+}
+
+footer .container .link a:hover {
+  color: #1baa80;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+
+  footer .container {
+    flex-direction: column;
+  }
+
+  footer .container h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ====================  End Footer  ==================== */
+
+/* ====================  Start back-to-top  ==================== */
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #a6b2c3;
+  border-radius: 50%;
+  z-index: 22222222222222222;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.back-to-top i {
+  font-size: 30px;
+  color: white;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+
+  #contact .container .content {
+    flex-direction: column-reverse;
+  }
+}
+
+/* ====================  End back-to-top  ==================== */
